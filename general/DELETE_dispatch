@@ -1,0 +1,19 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+  DELETE FROM [dp].[DispatchLicense] WHERE LicenseKey = 'Cl9LVkj0';
+  GO
+  DELETE FROM [dbo].[ProductCompanyLicense] WHERE LicenseKey = 'Cl9LVkj0';
+  GO
+  SELECT TOP (1000) [Id]
+      ,[LicenseKey]
+      ,[LastModified]
+      ,[ProductionURL]
+      ,[PilotURL]
+  FROM [dp].[DispatchLicense]
+  GO
+  SELECT TOP (1000) [Id]
+      ,[CompanyId]
+      ,[LicenseKey]
+      ,[ProductId]
+      ,[DateCreated]
+  FROM [dbo].[ProductCompanyLicense]
+
